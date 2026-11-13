@@ -1,0 +1,24 @@
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.titleText {
+  font-size: 32px;
+  font-weight: 600;
+  color: #323232;
+  padding: 1.5px;
+  margin: 0;
+}
+
+.subtitleText {
+  font-size: 14px;
+  font-weight: 300;
+  color: #9a9a9a;
+  padding: 1.5px;
+  margin: 0;
+  padding-bottom: 5px;
+}

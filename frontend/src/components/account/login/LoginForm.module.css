@@ -1,0 +1,70 @@
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #656565;
+  width: 100%;
+}
+
+.invalidFieldLabel {
+  color: #eb5374;
+}
+
+.inputField {
+  margin-top: 3px;
+  border-radius: 6px;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  color: #323232;
+  border: 1px solid #eaeaea;
+  padding-left: 8px;
+}
+
+.invalidInputField {
+  color: #fa5a7d;
+  background-color: #ffe2e5;
+  border: 1px solid #f99aa4;
+}
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.visibilityButton {
+  width: 12%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.visibilityIcon {
+  margin-top: 10%;
+  width: 80%;
+  height: auto;
+}
+
+.hiddenInputIcon {
+  margin-top: 10%;
+  width: 80%;
+  height: auto;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.submitButton {
+  width: 100%;
+  height: 38px;
+  background-color: #5d5fef;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 30px;
+}

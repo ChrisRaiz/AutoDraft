@@ -1,0 +1,310 @@
+.pageContainer {
+  width: 100vw;
+  height: 100vh;
+  padding: 2vw 2vw 2vw 2vw;
+  background-image: url('../data/assets/login-background-1920x1311.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+}
+
+.leftContentContainer {
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leftContentTrim {
+  width: calc(100vw * 0.47);
+  height: 100%;
+  /* background-color: #e5e5e5;
+  box-shadow:
+    inset 15px 15px 5px #ffffff,
+    inset -15px -15px 5px #ffffff; */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftContentBackground {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 2px solid #e5e5e5;
+  box-shadow:
+    inset 2px 2px 3px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 3% 7% 3% 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ffffff;
+}
+
+.companyContainer {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-start;
+  align-self: flex-start;
+  margin-bottom: auto;
+  gap: 12px;
+  flex: 1 1 1;
+}
+
+.companyLogo {
+  width: 30px;
+  height: auto;
+}
+
+.companyText {
+  font-size: 22px;
+  font-weight: 600;
+  color: #323232;
+}
+
+.loginContainer {
+  width: calc(100vw * 0.278);
+  height: 70%;
+  flex: 4 1 0;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.titleText {
+  font-size: 32px;
+  font-weight: 600;
+  color: #323232;
+  padding: 1.5px;
+  margin: 0;
+}
+
+.subtitleText {
+  font-size: 14px;
+  font-weight: 300;
+  color: #9a9a9a;
+  padding: 1.5px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.actionContainer {
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.submitButton {
+  width: 100%;
+  height: 38px;
+  background-color: #5d5fef;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+.dividerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0 8px 0;
+}
+
+.dividerLine {
+  width: 50%;
+  height: 1.8px;
+  background-color: #eaeaea;
+}
+
+.dividerText {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 10px 0 10px;
+}
+
+.signUpButton {
+  width: 100%;
+  height: 38px;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a1a1a1;
+  border: 1px solid #e3e3e3;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1 1 1;
+  gap: 10px;
+}
+
+.privacyNoticeText {
+  font-size: 12px;
+  font-weight: 200;
+  color: #9a9a9a;
+  padding: 0;
+  margin: 0;
+}
+
+.copyrightText {
+  font-size: 12px;
+  font-weight: 200;
+  color: #9a9a9a;
+  padding: 0;
+  margin: 0;
+}
+
+.rightContentContainer {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  padding-top: 15vh;
+  padding-left: 7%;
+}
+
+.informationContainer {
+  margin-bottom: 50px;
+}
+
+.informationText {
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 0 0 20px 0;
+  margin: 0;
+  line-height: 50px;
+}
+
+.informationSubText {
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.loginImage {
+  width: 39vw;
+  height: auto;
+}
+
+/* .loginForm {
+  gap: 10px;
+} */
+
+.userInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #656565;
+  width: 100%;
+}
+
+.invalidFieldLabel {
+  color: #eb5374;
+}
+
+.selectField {
+  margin-top: 3px;
+  border-radius: 6px;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  color: #323232;
+  border: 1px solid #eaeaea;
+  padding-left: 5px;
+}
+
+.inputField {
+  margin-top: 3px;
+  border-radius: 6px;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  color: #323232;
+  border: 1px solid #eaeaea;
+  padding-left: 8px;
+}
+
+.invalidInputField {
+  color: #fa5a7d;
+  background-color: #ffe2e5;
+  border: 1px solid #f99aa4;
+}
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.visibilityButton {
+  width: 12%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.visibilityIcon {
+  margin-top: 10%;
+  width: 80%;
+  height: auto;
+}
+
+.hiddenInputIcon {
+  margin-top: 10%;
+  width: 80%;
+  height: auto;
+}
+
+.visibleInputIcon {
+}
+
+.nameInputsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.errorMessage {
+  color: #000000;
+  font-size: 20px;
+}

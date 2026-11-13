@@ -1,0 +1,112 @@
+.formContainer {
+  max-height: 44vh;
+  width: calc(103% + 6px);
+  padding: 0 3% 0 0;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(154, 154, 154, 0.5);
+  border-radius: 4px;
+}
+
+.nameInputsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #656565;
+  width: 100%;
+}
+
+.invalidFieldLabel {
+  color: #eb5374;
+}
+
+.inputField {
+  margin-top: 3px;
+  border-radius: 6px;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  color: #323232;
+  border: 1px solid #eaeaea;
+  padding-left: 8px;
+}
+
+.invalidInputField {
+  color: #fa5a7d;
+  border: 1px solid #f99aa4;
+  box-shadow: 0 6px 0 #ffe2e5;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffe2e5;
+  padding-left: 14px;
+  gap: 7px;
+  border-radius: 0 0 6px 6px;
+}
+
+.errorIcon {
+  width: 16px;
+  height: auto;
+}
+
+.errorMessage {
+  color: #fa5a7d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.visibilityButton {
+  width: 12%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.visibilityIcon {
+  margin-top: 25%;
+  width: 80%;
+  height: auto;
+}
+
+.errorVisibilityIcon {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(79%) saturate(778%)
+    hue-rotate(305deg) brightness(94%) contrast(88%);
+}
+
+.submitButton {
+  width: 100%;
+  height: 38px;
+  background-color: #5d5fef;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 30px;
+}
