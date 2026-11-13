@@ -1,0 +1,483 @@
+.pageContainer {
+  width: 100%;
+  height: 100%;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: calc(80vw * 0.014);
+  position: relative;
+}
+
+.uploadContainer {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  padding: 1.8% 0 1.8% 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(238, 238, 238, 0.5);
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 29px;
+  padding: 0 3.3% 0 3.3%;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #edf2f6;
+  position: relative;
+}
+
+.navigationPosition {
+  position: absolute;
+  bottom: -13px;
+  /* border: 1px solid red; */
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #05004e;
+  margin: 0 0 5px 0;
+  margin-right: auto;
+}
+
+.pageActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchBarContainer {
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 13px;
+  height: auto;
+}
+
+.selectionSearchBar {
+  background-color: #f9fafb;
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 10px 15px 35px;
+  text-decoration: none;
+  outline: none;
+}
+
+.actionDivider {
+  border: 0.5px solid #edf2f6;
+  width: 0;
+  height: 30px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.selectButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 8px;
+  padding: 0 15px 0 15px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.selectIcon {
+  width: 11.5px;
+  height: auto;
+}
+
+.selectText {
+  white-space: nowrap;
+}
+
+.addDocumentsButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 8px;
+  padding: 0 15px 0 15px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.fileDropContainer {
+  width: 100%;
+  height: 80%;
+  background-color: #ffffff;
+  padding: 1.8% 3.3% 1.8% 3.3%;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(238, 238, 238, 0.5);
+}
+
+.fileDropArea {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1.2px solid #d7d7d7;
+  background-color: #fbfbfb;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dragDropIcon {
+  margin-top: 40px;
+  width: 40px;
+  height: auto;
+}
+
+.fileDropHelper {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d7d7d7;
+}
+
+.uploadList {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 3.3% 0.85% 3.3%;
+  gap: 2.5%;
+}
+
+.nullText {
+  font-size: 14px;
+  font-weight: 300;
+  color: #bfc5cd;
+}
+
+/* FileItem Styles */
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 23%;
+  padding: 1.2% 1.5% 1.2% 1.5%;
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: 2px solid #edf2f6;
+  /* overflow: hidden; */
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconContainer {
+  width: 27px;
+  height: 33.55px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 70%;
+}
+
+.fileText {
+  font-size: 12px;
+  font-weight: 600;
+  color: #05004e;
+  padding: 0;
+  margin: 0;
+  line-height: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sizeText {
+  font-size: 11px;
+  font-weight: 400;
+  color: #96a5b8;
+  padding: 0;
+  margin: 0;
+}
+
+.rightContent {
+  display: flex;
+  align-items: center;
+}
+
+.deleteButton {
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  padding: 10%;
+  background-color: #e8eff3;
+}
+
+.deleteButton:hover {
+  background-color: #fa5a7d;
+}
+
+/* PageNavigation Styles */
+
+.navigationContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 110px;
+  /* border: 1px solid red; */
+}
+
+.navigationButton {
+  background-color: #ffffff;
+  width: 22px;
+  height: 23px;
+  border: 1px solid #d6e0e7;
+  padding: 5px 6px 5px 6px;
+  border-radius: 3px;
+}
+
+.pageText {
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  width: auto;
+  height: 24px;
+  color: #d6e0e7;
+  border: 1px solid #d6e0e7;
+  border-radius: 3px;
+  padding: 1.65px 8px 0px 8px;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.fileButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Scan Styles */
+.scanContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  padding: 4.5% 5.5% 4.5% 5.5%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 15px rgba(62, 62, 62, 0.5);
+}
+
+.blackOverlay {
+  position: absolute;
+  left: -20.95%;
+  top: -10.55%;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.spaceBetweenTextContainer {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: min-content;
+}
+
+.fileName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #96a5b8;
+  padding: 0 0 3px 0;
+  margin: 0;
+}
+
+.completePercentage {
+  font-size: 24px;
+  font-weight: 600;
+  color: #05004e;
+  padding: 0;
+  margin: 0;
+}
+
+.percentage {
+  font-size: 28px;
+}
+
+.timeRemaining {
+  font-size: 13px;
+  font-weight: 500;
+  color: #96a5b8;
+  padding: 0 0 4px 0;
+  margin: 0;
+}
+
+.time {
+  font-size: 15px;
+}
+
+.scanStatus {
+  font-size: 13px;
+  font-weight: 500;
+  color: #96a5b8;
+}
+
+.barContainer {
+  width: 100%;
+  height: 28px;
+  background-color: #f8fbfe;
+  border: 1.5px solid #edf2f6;
+  border-radius: 18px;
+  margin: 25px 0 5px 0;
+  overflow: hidden;
+}
+
+/* Width is driven per-frame from Scan, so no transition here */
+.barFill {
+  position: relative;
+  height: 100%;
+}
+
+/* Shared liquid layer: solid body plus a vertically repeating sine-wave tile along the right edge */
+.waveFront,
+.waveBack {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* Mirrored stops so the gradient loops seamlessly as it slides */
+  background: linear-gradient(to right, #769bff, #bf83ff, #769bff);
+  background-size: 200% 100%;
+  border-radius: 16px 0 0 16px;
+  -webkit-mask-image: linear-gradient(#000, #000), var(--wave);
+  mask-image: linear-gradient(#000, #000), var(--wave);
+  /* Solid body overlaps the wave tile's filled left side by 1px so no seam shows between them */
+  -webkit-mask-size: calc(100% - 11px) 100%, 12px var(--wave-height);
+  mask-size: calc(100% - 11px) 100%, 12px var(--wave-height);
+  -webkit-mask-repeat: no-repeat, repeat-y;
+  mask-repeat: no-repeat, repeat-y;
+  -webkit-mask-position: left top, right top;
+  mask-position: left top, right top;
+  transition:
+    -webkit-mask-size 0.5s ease,
+    mask-size 0.5s ease,
+    border-radius 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.waveFront {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='24'%3E%3Cpath d='M0 0H6C10 4.3 10 7.7 6 12C2 16.3 2 19.7 6 24H0Z'/%3E%3C/svg%3E");
+  --wave-height: 24px;
+  right: 0;
+  animation:
+    barGradient 3s linear infinite,
+    waveDown 1.2s linear infinite;
+}
+
+/* Softer, longer wave that leads slightly ahead and moves the opposite way */
+.waveBack {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='34'%3E%3Cpath d='M0 0H6C9.47 6.1 9.47 10.9 6 17C2.53 23.1 2.53 27.9 6 34H0Z'/%3E%3C/svg%3E");
+  --wave-height: 34px;
+  right: -6px;
+  opacity: 0.45;
+  animation:
+    barGradient 3s linear infinite,
+    waveUp 2s linear infinite;
+}
+
+/* Fully filled: the solid body grows over the wave so the edge settles flat */
+.barComplete .waveFront {
+  -webkit-mask-size: 100% 100%, 12px var(--wave-height);
+  mask-size: 100% 100%, 12px var(--wave-height);
+  border-radius: 16px;
+}
+
+.barComplete .waveBack {
+  opacity: 0;
+}
+
+@keyframes barGradient {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes waveDown {
+  from {
+    -webkit-mask-position: left top, right 0 top 0;
+    mask-position: left top, right 0 top 0;
+  }
+  to {
+    -webkit-mask-position: left top, right 0 top 24px;
+    mask-position: left top, right 0 top 24px;
+  }
+}
+
+@keyframes waveUp {
+  from {
+    -webkit-mask-position: left top, right 0 top 0;
+    mask-position: left top, right 0 top 0;
+  }
+  to {
+    -webkit-mask-position: left top, right 0 top -34px;
+    mask-position: left top, right 0 top -34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waveFront,
+  .waveBack {
+    animation: none;
+  }
+}
+
+.textPadding {
+  padding: 0 8px 0 8px;
+}
