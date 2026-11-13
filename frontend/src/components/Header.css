@@ -1,0 +1,68 @@
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-bottom: 3%;
+  padding: 0 2rem 0 2rem;
+}
+
+.headerTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.pageTitle {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.headerDivider {
+  width: 100%;
+  border: 1px solid #272727;
+}
+
+.headerToolsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-self: flex-end;
+}
+
+.amount {
+  white-space: nowrap;
+}
+
+.search {
+  width: 12rem;
+  background-color: #262626;
+  padding: 5px 0 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.headerButton {
+  height: 40px;
+  width: auto;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.submissionOptions {
+  width: auto;
+  padding: 13px;
+  height: 100%;
+}
