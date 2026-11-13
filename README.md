@@ -29,7 +29,7 @@
 
 ## Overview
 
-Preparing document packages, such as a will set containing a Last Will & Testament, Powers of Attorney, a HIPAA Release, and a Living Will, usually means copying the same client details into many documents by hand and adjusting each one to the client's situation.
+Preparing document packages, such as a will set containing a Last Will & Testament, Powers of Attorney, a HIPAA Release, and so on, usually means copying the same client details into many documents by hand, adjusting each one to the client's situation, and having to duplicate sections based on the client's needs.
 
 AutoDraft replaces that process:
 
@@ -37,7 +37,7 @@ AutoDraft replaces that process:
 2. **Fields are configured.** Detected fields are organized into sections and mapped to the questions on the client form.
 3. **Documents are grouped into sets.** Related templates are bundled into document sets that are generated together.
 4. **Clients fill out a form.** Submissions are collected through JotForm and listed per client in the app.
-5. **Documents are generated.** The client's answers are patched into every document in the set, and conditional logic includes or excludes content so each document contains only what applies to that client.
+5. **Documents are generated.** The client's answers are patched into every document in the set, conditional logic includes or excludes content so each document contains only what applies to that client, and *x* amount of dynamic sections are created based on the conditions for the set and the client's answers.
 
 ---
 
