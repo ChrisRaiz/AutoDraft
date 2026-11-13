@@ -1,0 +1,58 @@
+.subsectionContainer {
+  position: relative;
+  width: 100%;
+}
+
+.subsectionDividerContainer {
+  position: relative;
+  width: 98%;
+  margin-left: auto;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowDivider {
+  border: 1px solid #edf2f6;
+  margin: 0;
+}
+
+.subsectionTitleContainer {
+  position: absolute;
+  top: 0;
+  left: 6%;
+  background-color: #ffffff;
+}
+
+.subsectionTitle {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #d6e0e7;
+  margin: 0;
+  padding: 0 6px 0 6px;
+}
+
+.expandCollapseButton {
+  position: absolute;
+  top: 0%;
+  right: 6%;
+  font-size: 12.5px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #769bff;
+  margin: 0;
+  padding: 0 6px 0 6px;
+  height: 20px;
+}
+
+.childrenContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 3%;
+  row-gap: 25px;
+  margin-bottom: 10px;
+  padding: 0 0 0 4%;
+}

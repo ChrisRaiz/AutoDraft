@@ -1,0 +1,128 @@
+.filterModal {
+  position: absolute;
+  z-index: 2;
+  left: 17%;
+  right: 0;
+  top: 9vh;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 1.8% 0 0.5% 0;
+  border-radius: 10px;
+  border: 1px solid #f7f7f7;
+  box-shadow: 0 4px 20px rgba(142, 142, 142, 0.8);
+}
+
+.modalBackdrop {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 3.3% 0 3.3%;
+  padding-bottom: 24px;
+  /* border-bottom: 2px solid #edf2f6; */
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #05004e;
+  margin: 0 0 5px 0;
+}
+
+.submissionEditorTitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #cbd9e6;
+}
+
+.dividerContainer {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+
+.headerDivider {
+  margin-top: 7.5px;
+  border: 2px solid #edf2f6;
+}
+
+.sectionContainer {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  color: #d6e0e7;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.fieldTypesTitle {
+  left: calc(3% - 5px);
+  background-color: #ffffff;
+  padding: 0 5px 0 5px;
+  font-size: 13px;
+}
+
+.fieldDataTitle {
+  left: 20%;
+  background-color: #ffffff;
+  padding: 0 5px 0 5px;
+  font-size: 13px;
+}
+
+.subsectionsTitle {
+  left: 37%;
+  background-color: #ffffff;
+  padding: 0 5px 0 5px;
+  font-size: 13px;
+}
+
+.filterSections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.typesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 17%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 17%;
+  height: 100%;
+}
+
+.subsectionsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 58%;
+  height: 100%;
+  gap: 3%;
+}

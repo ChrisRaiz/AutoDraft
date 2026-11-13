@@ -1,0 +1,82 @@
+label,
+input {
+  display: block;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.numberFieldContainer {
+  width: 30%;
+  color: #144571;
+  position: relative;
+}
+
+.numberFieldLabel {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.numberFieldInput {
+  width: 100%;
+  height: 40px;
+  background-color: #f9fafb;
+  border: 1px solid #cbd9e6;
+  color: #0f3659;
+  border-radius: 4px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.numberFieldContainerFocused {
+  width: 30%;
+  color: #144571;
+  position: relative;
+}
+
+.numberFieldLabelFocused {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+  color: #2a77bb;
+}
+
+.numberFieldInputFocused {
+  width: 100%;
+  height: 40px;
+  background-color: #f3f9ff;
+  border: 1px solid #769bff;
+  color: #0f3659;
+  border-radius: 4px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.numberButtonsContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.numberButton {
+  height: 40px;
+  width: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #adbcca;
+  border-radius: 0;
+  background-color: transparent;
+  border-left: 0.5px solid #cbd9e6;
+}
+
+.numberButtonsContainer button:nth-child(2) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.numberButtonFocused {
+  border-left: 1px solid #769bff;
+  color: #769bff;
+}
