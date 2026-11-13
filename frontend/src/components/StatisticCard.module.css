@@ -1,0 +1,30 @@
+.statCardContainer {
+  width: 25%;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5%;
+  padding: 2%;
+  border-radius: 12px;
+}
+
+.statCardIcon {
+  width: 28%;
+  height: auto;
+}
+
+.statCardCount {
+  font-size: 20px;
+  font-weight: 600;
+  color: #151d48;
+  margin: 0;
+}
+
+.statCardCategory {
+  font-size: 12px;
+  font-weight: 500;
+  color: #425166;
+  white-space: pre;
+  margin: 0;
+}

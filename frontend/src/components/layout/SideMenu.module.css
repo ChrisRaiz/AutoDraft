@@ -1,0 +1,153 @@
+/* AppTitle Styles */
+.appTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10%;
+  margin-bottom: 1.5vh;
+}
+
+.logoIconContainer {
+  min-width: 23%;
+  width: 23%;
+  height: auto;
+}
+
+.appTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #151d48;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 75%;
+  height: auto;
+}
+
+/* NavigationLink Styles */
+.currNavLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14%;
+  padding-left: 1.2vw;
+  background-color: #5d5fef;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(55, 69, 87, 0.15);
+  color: inherit;
+  text-decoration: none;
+}
+
+.navLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14%;
+  padding-left: 1.2vw;
+  color: inherit;
+  text-decoration: none;
+}
+
+.currNavIconContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  width: 11%;
+  object-fit: contain;
+  height: auto;
+}
+
+.navIconContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  width: 11%;
+  object-fit: contain;
+  height: auto;
+}
+
+.currNavLink {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 75%;
+  height: auto;
+}
+
+.navLink {
+  font-size: 14px;
+  color: #737791;
+  text-decoration: none;
+}
+
+/* NavigationLinks Styles */
+.navLinksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vh;
+}
+
+/* AutoDraftProCTA Styles */
+.proCtaContainer {
+  background-image: url('./../../data/assets/autodraft-pro-background.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  padding: 11% 16% 11% 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+}
+
+.ctaIcon {
+  width: 50%;
+  height: auto;
+}
+
+.ctaTitle {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.ctaDescription {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 80%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15%;
+}
+
+.ctaButton {
+  width: 90%;
+  height: 30%;
+  color: #5d5fef;
+  font-size: 14px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* SideMenu Styles */
+.sideMenu {
+  min-width: 200px;
+  width: 20%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 17.273px 33.117px 17.273px 33.117px;
+  background-color: #ffffff;
+}
