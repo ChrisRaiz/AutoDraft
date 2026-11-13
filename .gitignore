@@ -134,3 +134,34 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# ---------------------------------------------------------------------------
+# AutoDraft project-specific rules (apply to frontend/, backend/, r2-worker/)
+# ---------------------------------------------------------------------------
+
+# Document templates contain proprietary/client content and must never be committed.
+# Keep them locally in frontend/src/data/templates/
+frontend/src/data/templates/
+*.docx
+*.doc
+
+# Microsoft Office lock files
+~$*
+
+# macOS
+.DS_Store
+
+# Electron React Boilerplate build output
+frontend/.erb/dll/
+frontend/release/build/
+frontend/release/app/dist/
+frontend/src/node_modules/
+
+# Cloudflare Wrangler local state and secrets
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Any other local env files
+.env.*
+!.env.example
