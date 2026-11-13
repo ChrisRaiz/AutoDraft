@@ -1,0 +1,18 @@
+.checkboxContainer {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 3px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerCheck {
+  width: 82%;
+  height: 82%;
+  border-radius: 2px;
+  background-color: #769bff;
+}

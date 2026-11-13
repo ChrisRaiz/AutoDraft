@@ -1,0 +1,210 @@
+* {
+  outline: none;
+}
+
+label,
+input {
+  display: block;
+}
+
+.fieldContainer {
+  width: 31.3%;
+  color: #a7b8c6;
+  position: relative;
+}
+
+.fieldLabel {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.fieldInput {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #cdd7df;
+  color: #97a5b2;
+  background-color: #f9fcff;
+  border-radius: 4px;
+  padding-left: 8px;
+  outline: none;
+}
+
+.fieldContainerFocused {
+  color: #144571;
+}
+
+.fieldLabelFocused {
+  color: #2a77bb;
+}
+
+.fieldInputFocused {
+  background-color: #f3f9ff;
+  color: #104e85;
+  border: 1px solid #769bff;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.numberFieldContainerFocused {
+  width: 31.3%;
+  color: #144571;
+  position: relative;
+}
+
+.numberFieldLabelFocused {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+  color: #2a77bb;
+}
+
+.numberFieldInputFocused {
+  width: 100%;
+  height: 40px;
+  background-color: #f3f9ff;
+  border: 1px solid #769bff;
+  color: #0f3659;
+  border-radius: 4px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.numberButtonsContainer {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.numberButton {
+  height: 40px;
+  width: 40px;
+  font-size: 12px;
+  font-weight: 100;
+  /* color: #adbcca; */
+  color: #a7b8c6;
+  border-radius: 0;
+  background-color: transparent;
+  /* border-left: 0.5px solid #cbd9e6; */
+  border-left: 1px solid #cdd7df;
+}
+
+.numberButtonsContainer button:nth-child(2) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.numberButtonFocused {
+  border-left: 1px solid #769bff;
+  color: #769bff;
+}
+
+.selectComponentContainer {
+  width: 31.3%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fieldSelectContainer {
+  width: 100%;
+  color: #a7b8c6;
+  position: relative;
+}
+
+.fieldSelect {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #cdd7df;
+  color: #97a5b2;
+  background-color: #f9fcff;
+  border-radius: 4px;
+  padding-left: 8px;
+  outline: none;
+  position: relative;
+}
+
+.dropdownContainer {
+  /* background-color: #ffffff; */
+  /* border: 1px solid #cdd7df; */
+  width: 30%;
+  padding: 4px 2px 4px 2px;
+  height: auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-self: flex-end;
+  border-radius: 4px;
+  gap: 10px;
+}
+
+.dropdownOption {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  color: #0f3659;
+  font-weight: 400;
+  background-color: transparent;
+  border: 1px solid #cdd7df;
+}
+
+.optionDivider {
+  border: 0.5px solid #cdd7df;
+  margin: 0;
+  padding: 0;
+}
+
+/* input[type='date']::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+} */
+
+/* input[type='date']::-webkit-calendar-picker-indicator {
+  content: '';
+  display: block;
+  background: url('../data/assets/date-icon-14x14.svg') no-repeat;
+  background-size: 100%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translateX(-2%);
+} */
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  width: 33px;
+  height: 40px;
+  background: transparent;
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #cdd7df;
+}
+
+.iconContainerFocused {
+  border-left: 1px solid #769bff;
+}
+
+.dateIcon {
+  width: 13px;
+  height: auto;
+  pointer-events: none;
+  stroke: #adbcca;
+}
+
+.dateIconFocused {
+  stroke: #769bff;
+}
