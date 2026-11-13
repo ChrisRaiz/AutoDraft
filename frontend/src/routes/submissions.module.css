@@ -1,0 +1,403 @@
+.submissionsPageContainer {
+  width: 100%;
+  height: 100%;
+  padding: 1vw;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.submissionSelectionContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1.8% 0 1.8% 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(238, 238, 238, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.fieldEditorContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 1.8% 0 1.8% 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(238, 238, 238, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.contentContainer {
+  position: absolute;
+  min-width: 100%;
+}
+
+.selectionHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3.3% 0 3.3%;
+  margin-bottom: 29px;
+}
+
+.selectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #05004e;
+  margin: 0 0 5px 0;
+  margin-right: auto;
+}
+
+.editorHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3.3% 0 3.3%;
+  margin-bottom: 29px;
+}
+
+.editorTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #05004e;
+  margin: 0 0 5px 0;
+  margin-right: auto;
+}
+
+.submissionEditorTitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #cbd9e6;
+}
+
+.selectionActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchBarContainer {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 13px;
+  height: auto;
+}
+
+.selectionSearchBar {
+  background-color: #f9fafb;
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 10px 15px 35px;
+  text-decoration: none;
+  outline: none;
+}
+
+.actionsDivider {
+  border: 0.5px solid #edf2f6;
+  width: 0;
+  height: 30px;
+}
+
+.actionsButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.newSetButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 6px;
+  padding: 0 15px 0 15px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.newSetIcon {
+  width: 9px;
+  height: auto;
+}
+
+.newSetText {
+  white-space: nowrap;
+}
+
+.returnButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 6px;
+  padding: 0 15px 0 15px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.returnIcon {
+  width: 11px;
+  height: auto;
+  padding-bottom: 2px;
+}
+
+.returnText {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.selectionListContainer {
+}
+
+.selectionCategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3.3% 0 3.3%;
+  margin-bottom: 9px;
+}
+
+.rowContainer {
+  width: 100%;
+}
+
+.documentsList {
+  padding: 0;
+  margin: 0;
+}
+
+.statusIcon {
+  width: 25px;
+  height: auto;
+  margin-top: 5px;
+}
+
+.generateButton:hover {
+  background-color: #5981f0;
+}
+
+.listContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 73vh;
+  overflow: scroll;
+  scrollbar-color: #5d5fef90 #ffffff;
+}
+
+.openEditorButton:hover {
+  background-color: #5981f0;
+}
+
+.editorListContainer {
+  overflow: scroll;
+}
+
+.filterButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 6px;
+  padding: 0 18px 0 18px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.filterIcon {
+  width: 9.5px;
+  height: auto;
+}
+
+.filterButtonText {
+  white-space: nowrap;
+}
+
+.saveButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 6px;
+  width: 90px;
+  background-color: transparent;
+  border: 1px solid #5d5fef;
+  border-radius: 8px;
+  color: #5d5fef;
+  font-weight: 580;
+  font-size: 12px;
+}
+
+.saveIcon {
+  margin-top: 1px;
+  width: 15px;
+  height: auto;
+}
+
+.saveButtonText {
+  white-space: nowrap;
+}
+
+.deleteButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 6px;
+  width: 90px;
+  background-color: transparent;
+  border: 1px solid #fa5a7d;
+  border-radius: 8px;
+  color: #fa5a7d;
+  font-weight: 580;
+  font-size: 12px;
+}
+
+.deleteIcon {
+  margin-top: 1px;
+  width: 15px;
+  height: auto;
+}
+
+.deleteButtonText {
+  white-space: nowrap;
+}
+
+.expandableDividerContainer {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.expandableDividerTitleContainer {
+  position: absolute;
+  top: 0;
+  left: 6%;
+  background-color: #ffffff;
+}
+
+.expandableDividerTitleText {
+  font-size: 13px;
+  font-weight: 500;
+  color: #d6e0e7;
+  margin: 0;
+  padding: 0 6px 0 6px;
+}
+
+.expandableDividerButton {
+  position: absolute;
+  top: 0%;
+  right: 6%;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #769bff;
+  margin: 0;
+  padding: 0 6px 0 6px;
+  height: 20px;
+}
+
+.childrenContainer {
+  padding: 0 3.3% 0 3.3%;
+}
+
+.submissionStatisticsCardContainer {
+  width: 21%;
+  height: 70%;
+  background-color: #ffffff;
+  border: 1px solid rgba(203, 217, 230, 1);
+  border-radius: 6px;
+  box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  color: #a6bacc;
+  padding: 11px 14px 8px 14px;
+  justify-content: space-between;
+}
+
+.statisticTitleText {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.statisticContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.statisticText {
+  color: #41586d;
+  margin: 0;
+}
+
+.primaryStatisticText {
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.secondaryStatisticText {
+  font-size: 13px;
+  padding-left: 2px;
+}
+
+.statisticPercentageContainer {
+  background-color: #dcfce7;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 18px 7px 18px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+
+.statisticPercentageText {
+  color: #3cd856;
+}
+
+.childrenContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 5%;
+  row-gap: 15px;
+  margin-bottom: 30px;
+}
