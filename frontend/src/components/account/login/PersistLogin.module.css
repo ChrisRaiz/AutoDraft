@@ -1,0 +1,52 @@
+.persistLoginText {
+  font-size: 12px;
+  font-weight: 300;
+  color: #9a9a9a;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.persistLoginText:has([type='checkbox']:checked) {
+  color: #769bff;
+  font-weight: 400;
+}
+
+.persistLoginCheckbox {
+  display: none;
+}
+
+.artificialTextbox {
+  padding: 0;
+  margin: 0 5px 0 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  border: 1.3px solid #c1c1c1;
+  display: inline-block;
+}
+
+.innerArtificialBox {
+  display: none;
+}
+
+[type='checkbox']:checked + span {
+  background-color: #769bff;
+  border: 1px solid #a2b4e6;
+}
+
+[type='checkbox']:checked + span:before {
+  content: '\2714';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  color: #ffffff;
+  top: 0;
+  left: 2px;
+}
