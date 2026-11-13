@@ -19,6 +19,10 @@
   <img src="https://img.shields.io/badge/Cloudflare-R2%20%2B%20Workers-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare R2 and Workers">
 </p>
 
+<p align="center">
+  📖 <a href="https://chrisraiz.github.io/AutoDraft/"><b>Documentation</b></a>: how it works, writing templates, architecture, and setup.
+</p>
+
 ---
 
 > [!IMPORTANT]
@@ -135,6 +139,7 @@ AutoDraft is under active development. Most of the interface and the core servic
 
 ```
 .
+├── docs/                     # Documentation site (GitHub Pages)
 ├── frontend/                 # Electron + React desktop app
 │   ├── .erb/                 # Webpack configs and build scripts (Electron React Boilerplate)
 │   ├── assets/               # App icons

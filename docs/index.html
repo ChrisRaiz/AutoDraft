@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoDraft · Documentation</title>
+<meta name="description" content="Documentation for AutoDraft, a desktop app that turns a single client form into a complete, tailored set of legal documents.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F6F7FB;
+  --panel: #FFFFFF;
+  --panel-2: #EEF1F7;
+  --line: #DCE3EC;
+  --text: #151D48;
+  --muted: #5F6687;
+  --navy: #05004E;
+  --indigo: #5D5FEF;
+  --indigo-soft: #ECECFE;
+  --sky: #769BFF;
+  --pink: #FA5A7D;
+  --ok: #1F9D6B;
+  --wip: #C77700;
+  --display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body {
+  margin: 0; background-color: var(--paper); color: var(--text);
+  font: 16px/1.65 var(--body);
+  background-image: linear-gradient(rgba(93,95,239,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(93,95,239,.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+a { color: var(--indigo); text-underline-offset: 3px; text-decoration-color: rgba(93,95,239,.35); }
+a:hover { text-decoration-color: var(--indigo); }
+:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
+code { font: .86em var(--mono); background: var(--panel-2); border: 1px solid var(--line); padding: .1em .4em; border-radius: 5px; color: var(--navy); }
+
+.shell { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1200px; margin: 0 auto; }
+
+/* Sidebar: echoes the app's own side menu */
+nav.side { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 28px 20px; border-right: 1px solid var(--line); background: rgba(255,255,255,.88); backdrop-filter: blur(6px); }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--navy); text-decoration: none; font: 800 21px/1 var(--display); }
+.brand img { width: 38px; height: 38px; }
+.side ol { list-style: none; padding: 0; margin: 28px 0 0; }
+.side li a { display: block; padding: 8px 12px; margin: 2px 0; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
+.side li a:hover { color: var(--text); background: var(--panel-2); }
+.side li a.active { color: #fff; background: var(--indigo); box-shadow: 0 6px 16px -8px rgba(93,95,239,.8); }
+.side .sub a { padding-left: 26px; font-size: 14px; }
+.side .sub a.active { color: var(--indigo); background: var(--indigo-soft); box-shadow: none; }
+.repo { display: inline-flex; gap: 8px; align-items: center; margin-top: 28px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--text); background: var(--panel); text-decoration: none; font-size: 14px; }
+.repo:hover { border-color: var(--indigo); }
+
+main { padding: 40px 48px 96px; min-width: 0; }
+.content { max-width: 780px; }
+
+/* Hero */
+.hero { margin-bottom: 64px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; font: 700 12px/1 var(--body); letter-spacing: .04em; text-transform: uppercase; color: var(--wip); background: #FFF4E0; border: 1px solid #F5D9A8; padding: 7px 11px; border-radius: 999px; }
+.badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--wip); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .3; } }
+h1 { font: 800 clamp(42px, 6vw, 64px)/1 var(--display); margin: 18px 0 14px; letter-spacing: -0.03em; color: var(--navy); }
+.lede { font-size: 19px; margin: 0 0 32px; max-width: 38em; color: #343B63; }
+
+/* The signature element: one template line, before and after generation */
+.draft { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); align-items: stretch; max-width: 900px; }
+.sheet { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px 22px; box-shadow: 0 18px 40px -28px rgba(5,0,78,.35); }
+.sheet .label { display: flex; align-items: center; gap: 8px; font: 600 12px/1 var(--body); color: var(--muted); margin-bottom: 14px; }
+.sheet .label img { width: 16px; height: 20px; }
+.sheet .doc { font: 15.5px/1.85 var(--serif); color: #1E2340; margin: 0; }
+.sheet .doc .ttl { display: block; font-weight: 600; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; text-align: center; margin-bottom: 8px; }
+.ph { font: 500 12.5px var(--mono); color: var(--indigo); background: var(--indigo-soft); border: 1px dashed rgba(93,95,239,.5); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.ph.dyn { color: #C2185B; background: #FFE2E9; border-color: rgba(250,90,125,.55); }
+.val { background: linear-gradient(transparent 60%, rgba(93,95,239,.18) 60%); font-weight: 600; }
+.val.dyn { background: linear-gradient(transparent 60%, rgba(250,90,125,.2) 60%); }
+.arrow { display: grid; place-items: center; }
+.arrow span { width: 40px; height: 40px; border-radius: 50%; background: var(--indigo); display: grid; place-items: center; box-shadow: 0 8px 18px -8px rgba(93,95,239,.9); }
+.caption { max-width: 900px; font-size: 14px; color: var(--muted); margin: 14px 0 0; }
+.caption .k { display: inline-block; width: 10px; height: 10px; border-radius: 3px; vertical-align: -1px; margin: 0 4px 0 10px; }
+.caption .k.s { background: var(--indigo); }
+.caption .k.d { background: var(--pink); }
+.stats { display: flex; flex-wrap: wrap; gap: 0; list-style: none; margin: 32px 0 0; padding: 20px 0 0; border-top: 1px solid var(--line); max-width: 900px; }
+.stats li { padding-right: 32px; margin-right: 32px; border-right: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.stats li:last-child { border-right: 0; }
+.stats strong { display: block; font: 800 26px/1.2 var(--display); color: var(--navy); }
+
+/* Sections */
+section { margin-top: 80px; }
+h2 { font: 800 32px/1.15 var(--display); margin: 0 0 14px; letter-spacing: -0.02em; color: var(--navy); }
+h3 { font: 700 20px/1.3 var(--display); margin: 40px 0 10px; color: var(--navy); }
+p { margin: 0 0 16px; }
+ul.plain { padding-left: 20px; margin: 0 0 16px; }
+ul.plain li { margin-bottom: 6px; }
+
+.note { border: 1px solid var(--line); border-left: 4px solid var(--wip); background: var(--panel); border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+.note strong { color: var(--navy); }
+.note.info { border-left-color: var(--indigo); }
+
+/* Workflow: numbered pipeline */
+ol.flow { list-style: none; counter-reset: st; padding: 0; margin: 24px 0; position: relative; }
+ol.flow::before { content: ""; position: absolute; left: 17px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(var(--indigo), var(--sky)); opacity: .35; }
+ol.flow > li { counter-increment: st; position: relative; padding: 0 0 22px 56px; }
+ol.flow > li::before { content: counter(st); position: absolute; left: 0; top: 0; width: 36px; height: 36px; border-radius: 10px; background: var(--indigo); color: #fff; font: 800 15px/36px var(--display); text-align: center; }
+ol.flow strong { display: block; font: 700 17px/1.4 var(--display); color: var(--navy); margin-bottom: 2px; padding-top: 6px; }
+ol.flow p { margin: 0; color: #3D4468; }
+
+/* Feature grid */
+.features { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin: 24px 0; }
+.feat { border: 1px solid var(--line); background: var(--panel); border-radius: 14px; padding: 20px; }
+.feat h3 { margin: 0 0 6px; font-size: 17px; }
+.feat p { margin: 0; color: var(--muted); font-size: 15px; }
+.feat ul { margin: 10px 0 0; padding-left: 18px; color: #3D4468; font-size: 15px; }
+.feat.wide { grid-column: span 4; background: linear-gradient(135deg, var(--navy), #2A2A8C); border-color: transparent; color: #fff; }
+.feat.wide h3 { color: #fff; }
+.feat.wide p, .feat.wide ul { color: #CFD3FF; }
+.feat.mid { grid-column: span 2; }
+.feat.third { grid-column: span 2; }
+
+/* Tables, code */
+.table-wrap { overflow-x: auto; margin: 18px 0 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th { text-align: left; font-weight: 600; font-size: 13px; color: var(--muted); padding: 12px 16px; background: var(--panel-2); border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 11px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.st { display: inline-block; font: 600 12px/1 var(--body); padding: 6px 9px; border-radius: 6px; white-space: nowrap; }
+.st.done { color: var(--ok); background: #E3F6EE; }
+.st.prog { color: var(--wip); background: #FFF4E0; }
+.st.no { color: #B4233F; background: #FFE2E9; }
+.code { margin: 14px 0 24px; border: 1px solid #1E1A63; border-radius: 12px; background: #0B0838; overflow: hidden; }
+.code .top { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px 8px 16px; border-bottom: 1px solid #241F72; font: 12px var(--mono); color: #9EA3D6; }
+.code pre { margin: 0; padding: 16px; overflow-x: auto; font: 14px/1.7 var(--mono); color: #E6E8FF; }
+.code .c { color: #7A7FB8; }
+.code .s { color: #A8B8FF; }
+.code .d { color: #FF9EB5; }
+.copy { font: 600 12px var(--body); color: #E6E8FF; background: #1A1660; border: 1px solid #2D2885; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--indigo); }
+ol.steps { list-style: none; counter-reset: st; padding: 0; margin: 18px 0; }
+ol.steps > li { counter-increment: st; position: relative; padding-left: 46px; margin-bottom: 18px; }
+ol.steps > li::before { content: counter(st); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--indigo); color: #fff; font: 700 14px/30px var(--display); text-align: center; }
+
+/* Architecture diagram */
+.arch { margin: 24px 0; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.arch svg { display: block; width: 100%; height: auto; }
+
+footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; gap: 12px; align-items: center; }
+footer img { width: 28px; height: 28px; }
+
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  nav.side { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 18px 16px; }
+  .side ol { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 14px; }
+  .side .sub { display: none; }
+  .side li a { padding: 6px 10px; }
+  .repo { margin-top: 10px; }
+  main { padding: 28px 16px 64px; }
+  .features { grid-template-columns: 1fr 1fr; }
+  .feat.wide { grid-column: 1 / -1; }
+  .feat.mid, .feat.third { grid-column: span 1; }
+}
+@media (max-width: 640px) {
+  .draft { grid-template-columns: 1fr; }
+  .arrow { padding: 10px 0; }
+  .arrow span { transform: rotate(90deg); }
+  .stats { gap: 12px 0; }
+  .stats li { padding-right: 16px; margin-right: 16px; }
+  .features { grid-template-columns: 1fr; }
+  .feat.mid, .feat.third { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="side" aria-label="Documentation sections">
+    <a class="brand" href="#top"><img src="assets/logo.svg" alt="">AutoDraft</a>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#workflow">How it works</a></li>
+      <li><a href="#templates">Writing templates</a></li>
+      <li class="sub"><a href="#static">Static fields</a></li>
+      <li class="sub"><a href="#dynamic">Dynamic fields</a></li>
+      <li><a href="#app">The desktop app</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li class="sub"><a href="#ipc">IPC bridge</a></li>
+      <li class="sub"><a href="#api">REST API</a></li>
+      <li class="sub"><a href="#worker">Storage worker</a></li>
+      <li><a href="#status">Project status</a></li>
+      <li><a href="#local">Running locally</a></li>
+      <li class="sub"><a href="#config">Configuration</a></li>
+    </ol>
+    <a class="repo" href="https://github.com/ChrisRaiz/AutoDraft">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      View on GitHub
+    </a>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <span class="badge">Work in progress</span>
+      <h1>AutoDraft</h1>
+      <p class="lede">A desktop app that takes the administrative work out of preparing client documents. A client fills out one form, and AutoDraft generates every document in the package, each one built to match that client's answers.</p>
+
+      <figure class="draft" style="margin:0" role="img" aria-label="A template sentence with placeholder fields, and the same sentence after AutoDraft fills it in from a client's form answers">
+        <div class="sheet">
+          <div class="label"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 20'%3E%3Cpath d='M1 1h9l5 5v13H1z' fill='%23fff' stroke='%235D5FEF' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M10 1v5h5' fill='none' stroke='%235D5FEF' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">Last Will.docx · template</div>
+          <p class="doc"><span class="ttl">Article II</span>I, <span class="ph">{{Client | Full Name}}</span>, of <span class="ph">{{Client | County}}</span> County, declare that I have the following children: <span class="ph dyn">{{Child * | Name}}</span>.</p>
+        </div>
+        <div class="arrow" aria-hidden="true"><span><svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="sheet">
+          <div class="label"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 20'%3E%3Cpath d='M1 1h9l5 5v13H1z' fill='%235D5FEF' stroke='%235D5FEF' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M10 1v5h5' fill='none' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E" alt="">Last Will – J. Rivera.docx · generated</div>
+          <p class="doc"><span class="ttl">Article II</span>I, <span class="val">Jordan Rivera</span>, of <span class="val">Travis</span> County, declare that I have the following children: <span class="val dyn">Avery Rivera</span> and <span class="val dyn">Sam Rivera</span>.</p>
+        </div>
+      </figure>
+      <p class="caption">One template, filled from one form submission. <span class="k s"></span>Static fields <span class="k d"></span>Dynamic fields repeat once for each matching answer.</p>
+
+      <ul class="stats">
+        <li><strong>3</strong>services</li>
+        <li><strong>6</strong>API resources</li>
+        <li><strong>1</strong>form per client</li>
+      </ul>
+    </header>
+
+    <div class="content">
+      <section id="overview" style="margin-top:0">
+        <h2>Overview</h2>
+        <div class="note"><strong>AutoDraft is a work in progress and is not a production deployment.</strong> No live databases, storage buckets, or Cloudflare Workers are provisioned for it, and parts of the interface use sample data. The project demonstrates the design and engineering of an application built to grow into a large-scale production system.</div>
+        <p>Preparing a document package, such as a will set with a Last Will &amp; Testament, Powers of Attorney, a HIPAA Release, and a Living Will, usually means typing the same client details into many documents by hand and then adjusting each one to the client's situation. AutoDraft automates that work from template to finished document.</p>
+        <div class="features">
+          <div class="feat wide"><h3>Template detection</h3><p>Upload Word templates and AutoDraft finds every field in them.</p>
+            <ul><li>Native file browser or drag and drop</li><li>Static and dynamic fields detected in the main process</li><li>Live progress for each file as it's scanned</li></ul></div>
+          <div class="feat mid"><h3>Field editor</h3><p>Group detected fields into sections and map them to form questions.</p></div>
+          <div class="feat third"><h3>Document sets</h3><p>Bundle related templates and drag to set their order.</p></div>
+          <div class="feat third"><h3>Generator</h3><p>Produce every document in a set from one submission.</p></div>
+          <div class="feat third"><h3>Submissions</h3><p>Client form responses from JotForm, listed per client.</p></div>
+        </div>
+      </section>
+
+      <section id="workflow">
+        <h2>How it works</h2>
+        <ol class="flow">
+          <li><strong>Upload templates</strong><p>Choose <code>.docx</code> templates with the file browser or drag them into the upload window.</p></li>
+          <li><strong>Scan for fields</strong><p>The Electron main process reads each template and collects every <code>{{Category | Field}}</code> placeholder, sorting them into static and dynamic fields. The scan window updates after each file.</p></li>
+          <li><strong>Configure fields</strong><p>In the field editor, detected fields are organized into sections and mapped to questions on the client form.</p></li>
+          <li><strong>Build document sets</strong><p>Templates that are always prepared together are grouped into a set, in the order they should be generated.</p></li>
+          <li><strong>Collect the client's answers</strong><p>The client fills out a single JotForm form. Each submission appears in the app under that client.</p></li>
+          <li><strong>Generate</strong><p>The answers are patched into every document in the set. Conditional logic includes or leaves out content, so each document holds only what applies to that client.</p></li>
+        </ol>
+      </section>
+
+      <section id="templates">
+        <h2>Writing templates</h2>
+        <p>Templates are ordinary Word documents with placeholders where client details belong. A placeholder has a category and a field name, separated by a pipe and wrapped in double braces:</p>
+        <div class="code"><div class="top"><span>Placeholder syntax</span></div><pre><span class="s">{{Category | Field}}</span></pre></div>
+        <p>Category and field names use letters, the digits 1 to 9, and single spaces. The spaces around the <code>|</code> are required.</p>
+
+        <h3 id="static">Static fields</h3>
+        <p>A static field has one value per client. Every copy of it in every document gets the same answer.</p>
+        <div class="code"><div class="top"><span>Template</span></div><pre>This Will is made by <span class="s">{{Client | Full Name}}</span>, residing at <span class="s">{{Client | Address}}</span>.</pre></div>
+
+        <h3 id="dynamic">Dynamic fields</h3>
+        <p>A dynamic field repeats. Add a <code>*</code> as the last word of the category, and AutoDraft fills it once for each matching entry on the form, replacing the <code>*</code> with that entry's number. One placeholder covers one child or ten.</p>
+        <div class="code"><div class="top"><span>Template</span></div><pre>Guardian of <span class="d">{{Child * | Name}}</span>: <span class="d">{{Child * | Guardian}}</span></pre></div>
+        <div class="code"><div class="top"><span>Form answers it reads</span></div><pre><span class="c">Child 1 | Name</span>      Avery Rivera
+<span class="c">Child 1 | Guardian</span>  Morgan Lee
+<span class="c">Child 2 | Name</span>      Sam Rivera
+<span class="c">Child 2 | Guardian</span>  Morgan Lee</pre></div>
+        <p>Which entries are included is decided by conditions: a dynamic section is generated only when the form answer it depends on matches. Each template's file name is stored with its fields so conditions can target a specific document.</p>
+        <div class="note info"><strong>Templates are never committed.</strong> They contain proprietary content, so <code>.gitignore</code> excludes them along with every <code>.doc</code> and <code>.docx</code> file. To try field detection, put your own templates in <code>frontend/src/data/templates/</code>.</div>
+      </section>
+
+      <section id="app">
+        <h2>The desktop app</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Screen</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Dashboard</td><td>Statistic cards, line and bar charts of activity, and recently generated documents</td></tr>
+            <tr><td>Generator</td><td>Pick a client and a document set, then generate, with progress and a completion view</td></tr>
+            <tr><td>Document Sets</td><td>Browse sets, preview one, reorder its documents by dragging, and add new templates</td></tr>
+            <tr><td>Upload &amp; Scan</td><td>Add templates and watch each one scanned for fields</td></tr>
+            <tr><td>Field Editor</td><td>Fixed and dynamic sections, filtering, and input formatting for values like phone numbers and SSNs</td></tr>
+            <tr><td>Submissions</td><td>Clients and their form submissions, with update and delete actions</td></tr>
+            <tr><td>Login &amp; Sign-up</td><td>Persistent sessions, password recovery, and a multi-step sign-up that creates a user and a team on a tiered package</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <p>AutoDraft is a monorepo with three services. The desktop app does the document work locally, the REST API owns accounts and metadata, and a Cloudflare Worker guards file storage.</p>
+        <div class="arch">
+          <svg viewBox="0 0 720 268" role="img" aria-label="Architecture: the Electron desktop app talks to JotForm, to the Express REST API backed by MongoDB, and to a Cloudflare Worker in front of R2 storage">
+            <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5D5FEF"/></marker></defs>
+            <g font-family="Plus Jakarta Sans, sans-serif">
+              <rect x="10" y="40" width="220" height="220" rx="14" fill="#05004E"/>
+              <text x="30" y="72" fill="#fff" font-size="16" font-weight="800">Desktop app</text>
+              <text x="30" y="92" fill="#AEB3F5" font-size="12">Electron · React · TypeScript</text>
+              <rect x="28" y="110" width="184" height="46" rx="9" fill="#1C1870"/>
+              <text x="44" y="138" fill="#fff" font-size="13" font-weight="600">React renderer</text>
+              <text x="76" y="182" fill="#AEB3F5" font-size="11">typed IPC bridge</text>
+              <path d="M46 160v28" stroke="#769BFF" stroke-width="2" marker-end="url(#ah)"/><path d="M62 188v-28" stroke="#769BFF" stroke-width="2" marker-end="url(#ah)"/>
+              <rect x="28" y="196" width="184" height="46" rx="9" fill="#1C1870"/>
+              <text x="44" y="217" fill="#fff" font-size="13" font-weight="600">Main process</text>
+              <text x="44" y="233" fill="#AEB3F5" font-size="11">scanning · generation</text>
+
+              <rect x="300" y="40" width="190" height="96" rx="14" fill="#fff" stroke="#DCE3EC"/>
+              <text x="318" y="72" fill="#05004E" font-size="15" font-weight="800">REST API</text>
+              <text x="318" y="92" fill="#5F6687" font-size="12">Express 5 · TypeScript</text>
+              <text x="318" y="114" fill="#5F6687" font-size="11">users · teams · tiers · docs · fields</text>
+
+              <rect x="560" y="40" width="150" height="96" rx="14" fill="#fff" stroke="#DCE3EC"/>
+              <text x="578" y="72" fill="#05004E" font-size="15" font-weight="800">MongoDB</text>
+              <text x="578" y="92" fill="#5F6687" font-size="12">users · metadata</text>
+              <text x="578" y="110" fill="#5F6687" font-size="12">documents</text>
+
+              <rect x="300" y="164" width="190" height="96" rx="14" fill="#fff" stroke="#DCE3EC"/>
+              <text x="318" y="196" fill="#05004E" font-size="15" font-weight="800">Cloudflare Worker</text>
+              <text x="318" y="216" fill="#5F6687" font-size="12">HMAC authentication</text>
+
+              <rect x="560" y="164" width="150" height="96" rx="14" fill="#fff" stroke="#DCE3EC"/>
+              <text x="578" y="196" fill="#05004E" font-size="15" font-weight="800">Cloudflare R2</text>
+              <text x="578" y="216" fill="#5F6687" font-size="12">template files</text>
+
+              <rect x="40" y="0" width="160" height="26" rx="13" fill="#FFE2E9"/>
+              <text x="120" y="17" fill="#B4233F" font-size="12" font-weight="700" text-anchor="middle">JotForm submissions</text>
+
+              <g stroke="#5D5FEF" stroke-width="2" fill="none" marker-end="url(#ah)">
+                <path d="M230 88H296"/>
+                <path d="M490 88H556"/>
+                <path d="M395 136V160"/>
+                <path d="M490 212H556"/>
+                <path d="M120 28V36"/>
+              </g>
+              <text x="263" y="80" fill="#5F6687" font-size="11" text-anchor="middle">HTTP</text>
+              <text x="406" y="152" fill="#5F6687" font-size="11">signed</text>
+            </g>
+          </svg>
+        </div>
+
+        <h3 id="ipc">IPC bridge</h3>
+        <p>The renderer has no Node access. Everything that touches the file system, the network, or Word files goes through one preload bridge, <code>window.ipcAPI</code>. Its TypeScript type comes straight from the preload object, so the renderer and main process can't drift apart.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Area</th><th>Channels</th></tr></thead>
+          <tbody>
+            <tr><td>Templates</td><td><code>OPEN_FILE_BROWSER</code> <code>DETECT_PATCHES</code> <code>ON_SCAN_PROGRESS</code> <code>REMOVE_PROGRESS_LISTENER</code></td></tr>
+            <tr><td>Documents</td><td><code>GET_DOCUMENT_LIST</code> <code>GET_DOCUMENT_FIELDS</code> <code>POST_DOCUMENT_FIELDS</code> <code>PATCH_DOCUMENT</code></td></tr>
+            <tr><td>Accounts</td><td><code>AUTHENTICATE_CREDENTIALS</code> <code>CREATE_ACCOUNT</code> <code>CHECK_USER_EMAIL_AVAILABLE</code> <code>CHECK_TEAM_NAME_AVAILABLE</code></td></tr>
+            <tr><td>Forms</td><td><code>GET_JOTFORM_KEY</code></td></tr>
+          </tbody>
+        </table></div>
+
+        <h3 id="api">REST API</h3>
+        <p>An Express 5 server with Mongoose models, split across separate MongoDB databases for users, metadata, and documents. Passwords are hashed with bcrypt.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Base path</th><th>Resource</th><th>Operations</th></tr></thead>
+          <tbody>
+            <tr><td><code>/api/user</code></td><td>Accounts</td><td>Create, authenticate, find, check email, update, delete</td></tr>
+            <tr><td><code>/api/team</code></td><td>Teams</td><td>Create, authorize, find, check name, update, delete</td></tr>
+            <tr><td><code>/api/tier</code></td><td>Subscription tiers</td><td>Create, read, update, delete</td></tr>
+            <tr><td><code>/api/document</code></td><td>Document records</td><td>Create, find, update, delete by name or ID</td></tr>
+            <tr><td><code>/api/field</code></td><td>Detected fields</td><td>Create, find by document or ID, update, delete</td></tr>
+            <tr><td><code>/api/r2</code></td><td>File uploads</td><td>Upload a file to R2</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3 id="worker">Storage worker</h3>
+        <p>Template files live in Cloudflare R2 behind a Worker. Every request has to carry three headers, and the Worker rejects it before routing if any check fails:</p>
+        <ul class="plain">
+          <li><code>X-Filename</code>: the file being read or written</li>
+          <li><code>X-Timestamp</code>: when the request was signed. Requests older than five minutes are refused, which blocks replays.</li>
+          <li><code>X-Signature</code>: an HMAC of <code>filename:timestamp</code>, made with a secret shared only with the backend</li>
+        </ul>
+        <p>Signed requests can then <code>POST /files/postFile</code>, <code>GET /files/getFile</code>, or <code>DELETE /files/deleteFile</code>.</p>
+      </section>
+
+      <section id="status">
+        <h2>Project status</h2>
+        <p>Most of the interface and core services are built. Connecting them end to end is the current work.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Area</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Template upload and field detection</td><td><span class="st done">Implemented</span></td></tr>
+            <tr><td>App layout, navigation, and dashboard</td><td><span class="st done">Implemented</span> sample data</td></tr>
+            <tr><td>REST API and R2 storage worker</td><td><span class="st done">Implemented</span> not deployed</td></tr>
+            <tr><td>Field editor, document sets, and submissions</td><td><span class="st prog">In progress</span></td></tr>
+            <tr><td>Generation from live form submissions</td><td><span class="st prog">In progress</span></td></tr>
+            <tr><td>Connecting the desktop app to the API</td><td><span class="st prog">In progress</span></td></tr>
+            <tr><td>Hosted databases, storage, and workers</td><td><span class="st no">Not provisioned</span></td></tr>
+            <tr><td>Automated tests</td><td><span class="st no">Not started</span></td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="local">
+        <h2>Running locally</h2>
+        <p>Since nothing is deployed, running the full system means bringing your own services: a MongoDB Atlas cluster, a Cloudflare account with an R2 bucket, and a JotForm API key. The desktop app's interface runs without them, using sample data. You'll need Node.js and npm.</p>
+        <ol class="steps">
+          <li>Clone the repo:
+            <div class="code"><div class="top"><span>bash</span><button class="copy" type="button">Copy</button></div><pre>git clone https://github.com/ChrisRaiz/AutoDraft.git
+cd AutoDraft</pre></div></li>
+          <li>Start the desktop app:
+            <div class="code"><div class="top"><span>bash</span><button class="copy" type="button">Copy</button></div><pre>cd frontend
+npm install
+npm start</pre></div>
+            <p>Use <code>npm run package</code> to build a distributable app.</p></li>
+          <li>Start the REST API, in a second terminal:
+            <div class="code"><div class="top"><span>bash</span><button class="copy" type="button">Copy</button></div><pre>cd backend
+npm install
+npm start</pre></div></li>
+          <li>Run the storage worker with Wrangler:
+            <div class="code"><div class="top"><span>bash</span><button class="copy" type="button">Copy</button></div><pre>cd r2-worker
+npm install
+npm run dev</pre></div></li>
+        </ol>
+
+        <h3 id="config">Configuration</h3>
+        <p>Secrets are never committed. Create these files yourself:</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>File</th><th>Variables</th></tr></thead>
+          <tbody>
+            <tr><td><code>backend/.env</code></td><td><code>PORT</code> <code>DB_USER</code> <code>DB_PASSWORD</code> <code>CLUSTER</code> <code>APP</code> <code>USERS_DB</code> <code>METADATA_DB</code> <code>DOCUMENTS_DB</code></td></tr>
+            <tr><td><code>frontend/.env</code></td><td><code>JOTFORM_API_KEY</code> <code>CLOUDFLARE_ENDPOINT</code> <code>CLOUDFLARE_REGION</code> <code>CLOUDFLARE_ACCESS_KEY_ID</code> <code>CLOUDFLARE_SECRET_ACCESS_KEY</code></td></tr>
+            <tr><td><code>r2-worker/.dev.vars</code></td><td><code>HMAC_SECRET</code> <code>AUTH_HEADER</code>. For a deployed Worker, set them with <code>wrangler secret put</code>.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <footer><img src="assets/logo.svg" alt="">Built by Chris Raiz. AutoDraft is a work in progress.</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = btn.closest('.code').querySelector('pre').innerText;
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () {
+      btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+    }, function () {});
+  });
+});
+(function () {
+  var links = [].slice.call(document.querySelectorAll('.side li a'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function update() {
+    var y = window.scrollY + 120, idx = 0;
+    targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top + window.scrollY <= y) idx = i; });
+    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+  }
+  window.addEventListener('scroll', update, { passive: true }); update();
+})();
+</script>
+</body>
+</html>
