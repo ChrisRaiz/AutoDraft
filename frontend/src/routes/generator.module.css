@@ -1,0 +1,268 @@
+.pageContainer {
+  width: 100%;
+  height: 100%;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.documentSetSelectionContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 1.8% 0 1.8% 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(238, 238, 238, 0.5);
+}
+
+.selectionHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3.3% 0 3.3%;
+  margin-bottom: 29px;
+}
+
+.selectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #05004e;
+  margin: 0 0 5px 0;
+  margin-right: auto;
+}
+
+.selectionActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchBarContainer {
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 13px;
+  height: auto;
+}
+
+.selectionSearchBar {
+  background-color: #f9fafb;
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 10px 15px 35px;
+  text-decoration: none;
+  outline: none;
+}
+
+.actionsDivider {
+  border: 0.5px solid #edf2f6;
+  width: 0;
+  height: 30px;
+}
+
+.actionsButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.newSetButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 8px;
+  padding: 0 15px 0 15px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.newSetIcon {
+  width: 9px;
+  height: auto;
+}
+
+.newSetText {
+  white-space: nowrap;
+}
+
+.addDocumentsButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 8px;
+  padding: 0 15px 0 15px;
+  background-color: transparent;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.addDocumentsIcon {
+  width: 15px;
+  height: auto;
+}
+
+.addDocumentsText {
+  white-space: nowrap;
+}
+
+.sortButton {
+  background-color: transparent;
+  color: #96a5b8;
+  font-weight: 400;
+  padding: 0;
+  text-align: left;
+  font-size: 11px;
+  height: min-content;
+  margin-bottom: 3px;
+  padding-bottom: 0;
+}
+
+.selectionCategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3.3% 0 3.3%;
+}
+
+.statusCategory {
+  width: 5%;
+}
+
+.idCategory {
+  width: 5%;
+}
+
+.setCategory {
+  width: 18%;
+}
+
+.filesCategory {
+  width: 4%;
+}
+
+.progressCategory {
+  width: 33%;
+}
+
+.completedCategory {
+  width: 11%;
+}
+
+.actionsCategory {
+  width: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.rowContainer {
+  width: 100%;
+}
+
+.documentsList {
+  padding: 0;
+  margin: 0;
+}
+
+.setRowContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 75px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7% 3.3% 0.7% 3.3%;
+  font-size: 11px;
+}
+
+.altRowBackground {
+  background-color: rgba(244, 251, 255, 0.5);
+}
+
+.statusIcon {
+  width: 25px;
+  height: auto;
+  margin-top: 5px;
+}
+
+.rowDataText {
+  color: #444a6d;
+}
+
+.categoryDivider {
+  border: 1px solid #edf2f6;
+  margin-bottom: 0;
+}
+
+.rowDivider {
+  border: 1px solid #edf2f6;
+  margin: 0;
+}
+
+.additionalActionsButton {
+  height: 30px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  background-color: #ffffff;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.additionalButtonText {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.generateButton {
+  height: 30px;
+  width: 40px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  padding: 0 10px 0 10px;
+  background-color: #769bff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.generateButtonText {
+  margin: 0;
+  margin-top: 1px;
+}
+
+.generateButton:hover {
+  background-color: #5981f0;
+}

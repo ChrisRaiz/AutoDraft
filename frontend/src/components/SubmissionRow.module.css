@@ -1,0 +1,97 @@
+.submissionRowContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 75px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7% 3.3% 0.7% 8.1%;
+  font-size: 11px;
+}
+
+.altSubmissionBackground {
+  background-color: rgba(242, 247, 255, 0.5);
+}
+
+.submissionIdCategory {
+  width: 8%;
+}
+
+.submissionDateCategory {
+  width: 15.17%;
+}
+
+.fieldsFilledCategory {
+  width: 15.97%;
+}
+
+.conditionalsCategory {
+  width: 34.37%;
+}
+
+.selectedCategory {
+  width: 12.4%;
+}
+
+.actionsCategory {
+  width: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.rowDataText {
+  color: #444a6d;
+}
+
+.openEditorButton {
+  height: 30px;
+  width: 40px;
+  padding: 0 10px 0 10px;
+  background-color: #769bff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.openEditorButtonText {
+  margin: 0;
+  margin-top: 1px;
+}
+
+.rowDivider {
+  border: 1px solid #edf2f6;
+  margin: 0;
+}
+
+.additionalActionsButton {
+  height: 30px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  background-color: #ffffff;
+  border: 1px solid #c3d3e2;
+  border-radius: 8px;
+  color: #0f3659;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.additionalButtonText {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.radioButton {
+  width: 20px;
+  height: 20px;
+  margin-left: 9%;
+}

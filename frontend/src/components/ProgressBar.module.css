@@ -1,0 +1,10 @@
+.progressBarContainer {
+  width: 88%;
+  height: 4px;
+  border-radius: 999px;
+}
+
+.progressBarFill {
+  height: 4px;
+  border-radius: 999px;
+}

@@ -1,0 +1,69 @@
+.selectionCategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3.3% 0 3.3%;
+  margin-bottom: 9px;
+}
+
+.sortButton {
+  background-color: transparent;
+  color: #96a5b8;
+  font-weight: 400;
+  padding: 0;
+  text-align: left;
+  font-size: 11px;
+  height: min-content;
+  margin-bottom: 3px;
+  padding-bottom: 0;
+}
+
+.idCategory {
+  width: 5%;
+}
+
+.clientCategory {
+  width: 14.2%;
+}
+
+.lastSubmissionCategory {
+  width: 14%;
+}
+
+.submissionsCategory {
+  width: 11.6%;
+}
+
+.emailCategory {
+  width: 17.3%;
+}
+
+.phoneCategory {
+  width: 17.5%;
+}
+
+.selectedCategory {
+  width: 12.4%;
+}
+
+.actionsCategory {
+  width: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.rowDivider {
+  border: 1px solid #edf2f6;
+  margin: 0;
+}
+
+.listContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 73vh;
+  overflow: scroll;
+  scrollbar-color: #5d5fef90 #ffffff;
+}
