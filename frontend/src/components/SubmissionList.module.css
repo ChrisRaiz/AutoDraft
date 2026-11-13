@@ -1,0 +1,72 @@
+.hidden {
+  display: none;
+}
+
+.stickyContainer {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+
+.submissionCategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 3.3% 12px 8.1%;
+  background-color: #ffffff;
+}
+
+.sortButton {
+  background-color: transparent;
+  color: #96a5b8;
+  font-weight: 400;
+  padding: 0;
+  text-align: left;
+  font-size: 11px;
+  height: min-content;
+  margin-bottom: 3px;
+  padding-bottom: 0;
+}
+
+.submissionIdCategory {
+  width: 8%;
+}
+
+.submissionDateCategory {
+  width: 15.17%;
+}
+
+.fieldsFilledCategory {
+  width: 15.97%;
+}
+
+.conditionalsCategory {
+  width: 34.37%;
+}
+
+.selectedCategory {
+  width: 12.4%;
+}
+
+.actionsCategory {
+  width: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.rowDivider {
+  border: 1px solid #edf2f6;
+  margin: 0;
+}
+
+.listContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 73vh;
+  overflow: scroll;
+  scrollbar-color: #5d5fef90 #ffffff;
+}
